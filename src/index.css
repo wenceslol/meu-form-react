@@ -4,12 +4,11 @@ body{
   height: 90vh;
   background-image: url("./assets/background-image.jpg");
   background-position: center;
+
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.formInput{
-  margin: 5px;
 }
 
 .app{
@@ -26,4 +25,43 @@ body{
   text-align: center;
   margin-bottom: 20px;
   margin-top: 0px;
+}
+
+.register{
+  display:grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.loginInput{
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+.passwordInput{
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.formLabel{
+  display: grid;
+  text-align:right;
+  padding-bottom: 20px;  
+}
+
+.formInput{
+  display: grid;
+  text-align:right;
+  padding-bottom: 15px;
+}
+
+.buttons{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.buttonRegister{
+  text-align: right;
+}
+
+.buttonBack{
+  text-align: left;
 }

@@ -1,0 +1,39 @@
+import {useEffect, useState} from 'react'
+import estados from './estados.json'
+
+function UseEstados(){
+
+    const [estados, setEstados] = useState([]);
+
+    useEffect(() => {
+        fetch("https://brasilapi.com.br/api/ibge/uf/v1")
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                console.log(data)
+                for (var i = 0; i < data.length; i++) {
+                    setEstados([...estados, data[i].nome])
+                    // more statements
+                }
+                //setEstados(data);
+            })
+    }, []);
+
+    function handleAddEstados(parametro){
+        console.log(parametro);
+        for (var i = 0; i < data.length; i++) {
+            console.log(i)
+            console.log(data[i].nome);
+            setEstados([...estados, data[i].nome])
+            // more statements
+        }
+    }
+
+    return(
+        estados
+    );
+
+}
+
+export default UseEstados
