@@ -28,8 +28,6 @@ function Login(props){
         }
         else{
             console.log("Usuário ou senha incorretos!")
-            console.log(login);
-            console.log(password);
         }
     }
 

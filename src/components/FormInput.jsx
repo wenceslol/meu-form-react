@@ -1,17 +1,28 @@
+import {useState} from 'react'
+
+
 function FormInput(props) {
 
+    const [focused, setFocused] = useState(false);
+    const{value, label, errorMessage, onChange, id, ...inputProps} = props;
+
+    const handleFocus = (e) => {
+        setFocused(true);
+    }
 
     return(
         <>
             <div className="formLabel">
-                <label>{props.placeholder}: </label>
+                <label>{label}: </label>
             </div>
             <div className="formInput">
-                <input  type={props.type}
-                        placeholder={props.placeholder}
-                        onChange={props.onChange}
-                        required>
+                <input  {...inputProps}
+                        onChange={onChange}
+                        onBlur={handleFocus}
+                        onFocus={() => inputProps.name==="confirmPassword" && setFocused(true)}
+                        focused={focused.toString()}>
                 </input>
+                <span>{errorMessage}</span>
             </div>
         </>
     );
